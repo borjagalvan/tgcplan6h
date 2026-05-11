@@ -1,0 +1,783 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0">
+  <link rel="apple-touch-icon" href="data:image/png;base64,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">
+  <link rel="icon" type="image/png" sizes="192x192" href="data:image/png;base64,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">
+  <meta name="apple-mobile-web-app-capable" content="yes">
+  <meta name="apple-mobile-web-app-status-bar-style" content="black-translucent">
+  <meta name="apple-mobile-web-app-title" content="TGC Sub-6h">
+  <meta name="theme-color" content="#0f0e0d">
+<title>TGC 2027 · Sub-6h Plan</title>
+<style>
+  :root {
+    --bg: #0f0e0d;
+    --surf: #181513;
+    --surf2: #221e1a;
+    --surf3: #2a2420;
+    --line: #3a312a;
+    --text: #f2e8de;
+    --muted: #c4b09a;
+    --faint: #7a6e65;
+    --orange: #e8711e;
+    --orange2: #c45610;
+    --gold: #c98a14;
+    --blue: #4d8ab0;
+    --green: #4a9444;
+    --red: #c05840;
+    --base: #2e5e80;
+    --build: #8a3e10;
+    --spec: #7a5208;
+    --peak: #1f4e1d;
+    --taper: #2f6a2c;
+    --streng: #1e2e1a;
+    --series: #2e1a10;
+    --short: #152030;
+    --long: #2a2010;
+    --rest: #1a1816;
+  }
+  * { box-sizing: border-box; margin: 0; padding: 0; -webkit-tap-highlight-color: transparent; }
+  body { background: var(--bg); color: var(--text); font-family: -apple-system, 'Helvetica Neue', Arial, sans-serif; min-height: 100vh; }
+
+  /* ── HEADER ── */
+  .app-header {
+    background: var(--surf);
+    border-bottom: 3px solid var(--orange);
+    padding: 14px 20px 12px;
+    position: sticky; top: 0; z-index: 100;
+    display: flex; align-items: center; justify-content: space-between;
+  }
+  .app-header .logo { display: flex; flex-direction: column; }
+  .app-header .logo-eye { font-size: 9px; font-weight: 700; letter-spacing: 2px; color: var(--orange); text-transform: uppercase; }
+  .app-header .logo-title { font-size: 20px; font-weight: 800; color: var(--text); line-height: 1.1; }
+  .app-header .logo-title span { color: var(--orange); }
+  .header-meta { text-align: right; }
+  .header-meta .date-target { font-size: 10px; color: var(--muted); }
+  .header-meta .time-target { font-size: 18px; font-weight: 800; color: var(--orange); }
+
+  /* ── NAV TABS ── */
+  .nav-tabs {
+    display: flex; overflow-x: auto; gap: 0;
+    background: var(--surf2);
+    border-bottom: 1px solid var(--line);
+    scrollbar-width: none;
+  }
+  .nav-tabs::-webkit-scrollbar { display: none; }
+  .nav-tab {
+    flex-shrink: 0; padding: 10px 16px;
+    font-size: 11px; font-weight: 700; letter-spacing: 0.5px;
+    color: var(--faint); cursor: pointer; border: none; background: none;
+    border-bottom: 3px solid transparent; transition: all .2s;
+    text-transform: uppercase; white-space: nowrap;
+  }
+  .nav-tab.active { color: var(--text); border-bottom-color: var(--orange); }
+  .nav-tab:hover { color: var(--muted); }
+
+  /* ── VIEWS ── */
+  .view { display: none; padding: 16px; }
+  .view.active { display: block; }
+
+  /* ── DASHBOARD ── */
+  .stats-grid { display: grid; grid-template-columns: 1fr 1fr; gap: 10px; margin-bottom: 16px; }
+  .stat-card {
+    background: var(--surf2); border: 1px solid var(--line); border-radius: 10px;
+    padding: 14px; display: flex; flex-direction: column; gap: 4px;
+  }
+  .stat-label { font-size: 9px; font-weight: 700; letter-spacing: 1.5px; color: var(--faint); text-transform: uppercase; }
+  .stat-value { font-size: 26px; font-weight: 800; color: var(--text); line-height: 1; }
+  .stat-value.orange { color: var(--orange); }
+  .stat-sub { font-size: 10px; color: var(--muted); }
+
+  .section-title {
+    font-size: 11px; font-weight: 700; letter-spacing: 1.5px;
+    color: var(--orange); text-transform: uppercase; margin: 20px 0 10px;
+  }
+
+  /* ── PHASE CARDS ── */
+  .phase-card {
+    border-radius: 12px; overflow: hidden; margin-bottom: 12px;
+    border: 1px solid var(--line); cursor: pointer;
+  }
+  .phase-header {
+    padding: 14px 16px; display: flex; align-items: center; justify-content: space-between;
+  }
+  .phase-header .ph-left { display: flex; flex-direction: column; gap: 3px; }
+  .phase-header .ph-name { font-size: 15px; font-weight: 800; color: white; }
+  .phase-header .ph-sub { font-size: 10px; color: rgba(255,255,255,0.7); }
+  .phase-header .ph-badge {
+    background: rgba(0,0,0,0.3); border-radius: 20px; padding: 4px 10px;
+    font-size: 10px; font-weight: 700; color: white;
+  }
+  .phase-body { background: var(--surf2); padding: 12px 16px; display: none; }
+  .phase-body.open { display: block; }
+  .phase-note { font-size: 12px; color: var(--muted); padding: 4px 0; border-bottom: 1px solid var(--line); }
+  .phase-note:last-child { border-bottom: none; }
+  .phase-note::before { content: '→ '; color: var(--orange); font-weight: 700; }
+
+  /* ── PROGRESS BAR ── */
+  .progress-container { margin-bottom: 16px; }
+  .progress-bar-bg { background: var(--surf3); border-radius: 20px; height: 8px; overflow: hidden; margin-top: 6px; }
+  .progress-bar-fill { height: 100%; border-radius: 20px; background: linear-gradient(90deg, var(--orange2), var(--orange)); transition: width .5s; }
+  .progress-label { display: flex; justify-content: space-between; font-size: 10px; color: var(--muted); margin-top: 4px; }
+
+  /* ── WEEK LIST ── */
+  .week-card {
+    background: var(--surf2); border: 1px solid var(--line); border-radius: 10px;
+    margin-bottom: 8px; overflow: hidden; cursor: pointer;
+  }
+  .week-header {
+    display: flex; align-items: center; gap: 10px; padding: 12px 14px;
+  }
+  .week-num {
+    background: var(--surf3); border-radius: 8px; min-width: 42px; height: 42px;
+    display: flex; flex-direction: column; align-items: center; justify-content: center;
+  }
+  .week-num .wn { font-size: 16px; font-weight: 800; color: var(--text); line-height: 1; }
+  .week-num .wl { font-size: 8px; color: var(--faint); }
+  .week-info { flex: 1; }
+  .week-dates { font-size: 10px; color: var(--faint); }
+  .week-title { font-size: 13px; font-weight: 700; color: var(--text); }
+  .week-km { font-size: 12px; color: var(--orange); font-weight: 700; }
+  .week-dplus { font-size: 11px; color: var(--muted); }
+  .week-body { display: none; border-top: 1px solid var(--line); }
+  .week-body.open { display: block; }
+  .session-row {
+    display: flex; align-items: flex-start; gap: 10px;
+    padding: 9px 14px; border-bottom: 1px solid var(--line);
+  }
+  .session-row:last-child { border-bottom: none; }
+  .session-day {
+    font-size: 9px; font-weight: 700; letter-spacing: 1px; text-transform: uppercase;
+    color: var(--faint); min-width: 28px; padding-top: 1px;
+  }
+  .session-dot {
+    width: 10px; height: 10px; border-radius: 50%; flex-shrink: 0; margin-top: 3px;
+  }
+  .session-text { font-size: 12px; color: var(--muted); flex: 1; line-height: 1.4; }
+  .session-check {
+    width: 22px; height: 22px; border-radius: 6px; border: 2px solid var(--line);
+    flex-shrink: 0; cursor: pointer; display: flex; align-items: center; justify-content: center;
+    transition: all .15s; margin-top: 0;
+  }
+  .session-check.done { background: var(--green); border-color: var(--green); }
+  .session-check.done::after { content: '✓'; font-size: 13px; color: white; font-weight: 700; }
+
+  /* session type colors */
+  .dot-streng { background: #4a9444; }
+  .dot-series { background: var(--orange); }
+  .dot-short  { background: var(--blue); }
+  .dot-long   { background: var(--gold); }
+  .dot-rest   { background: var(--faint); }
+  .dot-race   { background: var(--red); }
+
+  /* Phase filter pills */
+  .filter-pills { display: flex; gap: 8px; overflow-x: auto; padding-bottom: 4px; scrollbar-width: none; margin-bottom: 14px; }
+  .filter-pills::-webkit-scrollbar { display: none; }
+  .pill {
+    flex-shrink: 0; padding: 6px 14px; border-radius: 20px; font-size: 11px; font-weight: 700;
+    cursor: pointer; border: 1px solid var(--line); background: var(--surf2); color: var(--muted);
+    transition: all .15s;
+  }
+  .pill.active { color: white; border-color: transparent; }
+  .pill-all.active { background: var(--orange); }
+  .pill-base.active { background: var(--base); }
+  .pill-build.active { background: var(--build); }
+  .pill-spec.active { background: var(--spec); }
+  .pill-peak.active { background: var(--peak); }
+  .pill-taper.active { background: var(--taper); }
+
+  /* ── STRENGTH ── */
+  .strength-table { width: 100%; border-collapse: collapse; font-size: 11px; margin-bottom: 20px; }
+  .strength-table th { background: var(--surf3); color: var(--muted); font-size: 9px; letter-spacing: 1px; text-transform: uppercase; padding: 8px 10px; text-align: left; border-bottom: 1px solid var(--line); }
+  .strength-table td { padding: 9px 10px; border-bottom: 1px solid var(--line); color: var(--muted); vertical-align: top; }
+  .strength-table tr:nth-child(even) td { background: var(--surf2); }
+  .strength-table .ex-name { color: var(--text); font-weight: 600; }
+  .strength-table .phase-val { color: var(--orange); font-weight: 700; }
+
+  /* ── CHECKPOINT ── */
+  .cp-list { display: flex; flex-direction: column; gap: 0; }
+  .cp-item {
+    display: flex; gap: 14px; align-items: flex-start; padding: 14px 0;
+    border-bottom: 1px solid var(--line); position: relative;
+  }
+  .cp-item:last-child { border-bottom: none; }
+  .cp-dot-col { display: flex; flex-direction: column; align-items: center; padding-top: 3px; }
+  .cp-circle {
+    width: 14px; height: 14px; border-radius: 50%; background: var(--orange);
+    border: 2px solid var(--orange2); flex-shrink: 0;
+  }
+  .cp-line { width: 2px; background: var(--line); flex: 1; margin-top: 4px; min-height: 20px; }
+  .cp-item:last-child .cp-line { display: none; }
+  .cp-content { flex: 1; }
+  .cp-km { font-size: 10px; color: var(--faint); }
+  .cp-name { font-size: 15px; font-weight: 700; color: var(--text); }
+  .cp-time { font-size: 20px; font-weight: 800; color: var(--orange); }
+  .cp-tactic { font-size: 12px; color: var(--muted); margin-top: 3px; line-height: 1.4; }
+
+  /* ── CHART ── */
+  .chart-wrap { background: var(--surf2); border-radius: 12px; padding: 16px; margin-bottom: 16px; border: 1px solid var(--line); }
+  .chart-title { font-size: 11px; font-weight: 700; color: var(--muted); margin-bottom: 12px; text-transform: uppercase; letter-spacing: 1px; }
+  canvas { width: 100% !important; }
+
+  /* ── LEGEND ── */
+  .legend { display: flex; flex-wrap: wrap; gap: 8px; margin-top: 10px; }
+  .legend-item { display: flex; align-items: center; gap: 5px; font-size: 10px; color: var(--muted); }
+  .legend-dot { width: 8px; height: 8px; border-radius: 50%; }
+
+  /* ── MISC ── */
+  .tag {
+    display: inline-block; padding: 2px 8px; border-radius: 20px;
+    font-size: 9px; font-weight: 700; letter-spacing: 0.5px; text-transform: uppercase;
+  }
+  .tag-base { background: rgba(46,94,128,.3); color: #7ab4d4; }
+  .tag-build { background: rgba(138,62,16,.3); color: #e08050; }
+  .tag-spec { background: rgba(122,82,8,.3); color: #d4a040; }
+  .tag-peak { background: rgba(31,78,29,.3); color: #70c068; }
+  .tag-taper { background: rgba(47,106,44,.3); color: #80c078; }
+
+  .info-box {
+    background: var(--surf2); border: 1px solid var(--line); border-left: 3px solid var(--orange);
+    border-radius: 0 10px 10px 0; padding: 12px 14px; margin-bottom: 12px;
+  }
+  .info-box p { font-size: 12px; color: var(--muted); line-height: 1.6; }
+
+
+  .fab-section { margin-bottom: 24px; }
+  .fab-header { border-radius: 10px 10px 0 0; padding: 12px 16px; display: flex; align-items: center; justify-content: space-between; }
+  .fab-header .fab-title { font-size: 15px; font-weight: 800; color: white; }
+  .fab-header .fab-sub { font-size: 10px; color: rgba(255,255,255,0.75); margin-top: 2px; }
+  .fab-header .fab-badge { background: rgba(0,0,0,0.25); border-radius: 20px; padding: 4px 12px; font-size: 11px; font-weight: 700; color: white; }
+  .fab-table { width: 100%; border-collapse: collapse; border-radius: 0 0 10px 10px; overflow: hidden; }
+  .fab-table th { background: var(--surf3); color: var(--faint); font-size: 9px; letter-spacing: 1px; text-transform: uppercase; padding: 8px 12px; text-align: left; border-bottom: 1px solid var(--line); }
+  .fab-table td { padding: 10px 12px; border-bottom: 1px solid var(--line); font-size: 12px; color: var(--muted); vertical-align: top; }
+  .fab-table tr:last-child td { border-bottom: none; }
+  .fab-table tr:nth-child(even) td { background: var(--surf2); }
+  .fab-table .ex { color: var(--text); font-weight: 600; }
+  .fab-table .series { color: var(--orange); font-weight: 700; }
+  .fab-table .tip { color: var(--faint); font-size: 11px; line-height: 1.4; }
+  .prog-phase { background: var(--surf2); border: 1px solid var(--line); border-radius: 10px; padding: 14px; margin-bottom: 10px; }
+  .prog-phase-title { font-size: 11px; font-weight: 700; color: var(--orange); text-transform: uppercase; letter-spacing: 1px; margin-bottom: 8px; }
+  .prog-row { display: flex; gap: 8px; margin-bottom: 6px; align-items: flex-start; }
+  .prog-dot { width: 8px; height: 8px; border-radius: 50%; flex-shrink: 0; margin-top: 4px; }
+  .prog-text { font-size: 12px; color: var(--muted); line-height: 1.5; }
+  .prog-text b { color: var(--text); }
+
+  @media (min-width: 600px) {
+    .stats-grid { grid-template-columns: repeat(4,1fr); }
+    .view { max-width: 700px; margin: 0 auto; }
+  }
+</style>
+</head>
+<body>
+
+<header class="app-header">
+  <div class="logo">
+    <span class="logo-eye">Transgrancanaria · Marathon 2027</span>
+    <span class="logo-title">PLAN <span>SUB-6H</span></span>
+  </div>
+  <div class="header-meta">
+    <div class="date-target">26 feb 2027</div>
+    <div class="time-target">5:55–6:00</div>
+  </div>
+</header>
+
+<nav class="nav-tabs">
+  <button class="nav-tab active" onclick="showView('dashboard')">Dashboard</button>
+  <button class="nav-tab" onclick="showView('plan')">Plan</button>
+  <button class="nav-tab" onclick="showView('checkpoints')">Checkpoints</button>
+  <button class="nav-tab" onclick="showView('strength')">Fuerza</button>
+  <button class="nav-tab" onclick="showView('chart')">Progresión</button>
+</nav>
+
+<!-- ══════════════ DASHBOARD ══════════════ -->
+<div id="view-dashboard" class="view active">
+  <div class="stats-grid">
+    <div class="stat-card">
+      <span class="stat-label">Objetivo</span>
+      <span class="stat-value orange">Sub-6h</span>
+      <span class="stat-sub">5h55 – 6h00</span>
+    </div>
+    <div class="stat-card">
+      <span class="stat-label">Semanas</span>
+      <span class="stat-value">42</span>
+      <span class="stat-sub">may 2026 – feb 2027</span>
+    </div>
+    <div class="stat-card">
+      <span class="stat-label">Sesiones</span>
+      <span class="stat-value">5-6</span>
+      <span class="stat-sub">por semana</span>
+    </div>
+    <div class="stat-card">
+      <span class="stat-label">Pico km</span>
+      <span class="stat-value orange">80</span>
+      <span class="stat-sub">km / semana</span>
+    </div>
+  </div>
+
+  <div class="progress-container">
+    <div class="section-title">Progreso del plan</div>
+    <div class="progress-bar-bg">
+      <div class="progress-bar-fill" id="progress-fill" style="width:0%"></div>
+    </div>
+    <div class="progress-label">
+      <span id="progress-text">Sem 1 de 42</span>
+      <span id="progress-pct">0%</span>
+    </div>
+  </div>
+
+  <div class="section-title">Fases del plan</div>
+  <div id="phase-cards"></div>
+
+  <div class="section-title">Sesiones de hoy</div>
+  <div class="info-box"><p>Selecciona tu semana actual en la pestaña <b>Plan</b> para ver las sesiones del día y marcarlas como completadas.</p></div>
+</div>
+
+<!-- ══════════════ PLAN ══════════════ -->
+<div id="view-plan" class="view">
+  <div class="filter-pills">
+    <button class="pill pill-all active" onclick="filterPhase('all',this)">Todas</button>
+    <button class="pill pill-base" onclick="filterPhase('base',this)">Base</button>
+    <button class="pill pill-build" onclick="filterPhase('build',this)">Construcción</button>
+    <button class="pill pill-spec" onclick="filterPhase('spec',this)">Específico</button>
+    <button class="pill pill-peak" onclick="filterPhase('peak',this)">Pico</button>
+    <button class="pill pill-taper" onclick="filterPhase('taper',this)">Taper</button>
+  </div>
+  <div id="week-list"></div>
+</div>
+
+<!-- ══════════════ CHECKPOINTS ══════════════ -->
+<div id="view-checkpoints" class="view">
+  <div class="info-box">
+    <p>Tiempos objetivo para la carrera del <b>26 de febrero de 2027</b>. Salida desde Tejeda, meta en Maspalomas.</p>
+  </div>
+  <div class="cp-list">
+    <div class="cp-item">
+      <div class="cp-dot-col"><div class="cp-circle"></div><div class="cp-line"></div></div>
+      <div class="cp-content">
+        <div class="cp-km">km 0</div>
+        <div class="cp-name">Salida · Tejeda</div>
+        <div class="cp-time">0:00</div>
+        <div class="cp-tactic">Primeros 20 min controlados. Ritmo firme pero limpio desde el inicio.</div>
+      </div>
+    </div>
+    <div class="cp-item">
+      <div class="cp-dot-col"><div class="cp-circle"></div><div class="cp-line"></div></div>
+      <div class="cp-content">
+        <div class="cp-km">km 11–12</div>
+        <div class="cp-name">CP1 · Garañón</div>
+        <div class="cp-time">1:35–1:40</div>
+        <div class="cp-tactic">Subida fuerte con bastones. 5-10 min más rápido que sub-7. Aquí empieza la diferencia.</div>
+      </div>
+    </div>
+    <div class="cp-item">
+      <div class="cp-dot-col"><div class="cp-circle"></div><div class="cp-line"></div></div>
+      <div class="cp-content">
+        <div class="cp-km">km 19–20</div>
+        <div class="cp-name">CP2 · Degollada</div>
+        <div class="cp-time">2:15–2:20</div>
+        <div class="cp-tactic">Correr las bajadas con confianza y cadencia alta. El trabajo excéntrico se nota aquí.</div>
+      </div>
+    </div>
+    <div class="cp-item">
+      <div class="cp-dot-col"><div class="cp-circle"></div><div class="cp-line"></div></div>
+      <div class="cp-content">
+        <div class="cp-km">km 31–32</div>
+        <div class="cp-name">CP3 · Ayagaures</div>
+        <div class="cp-time">3:55–4:05</div>
+        <div class="cp-tactic">Comer, beber y gestionar el calor. Aquí se define si vas a sub-6 o no.</div>
+      </div>
+    </div>
+    <div class="cp-item">
+      <div class="cp-dot-col"><div class="cp-circle"></div><div class="cp-line"></div></div>
+      <div class="cp-content">
+        <div class="cp-km">km 46–47</div>
+        <div class="cp-name">Meta · Maspalomas</div>
+        <div class="cp-time">5:55–6:00</div>
+        <div class="cp-tactic">Últimos 14 km: calor y esfuerzo mental. Cadencia constante y gestión de ritmo.</div>
+      </div>
+    </div>
+  </div>
+</div>
+
+<!-- ══════════════ STRENGTH ══════════════ -->
+<div id="view-strength" class="view">
+  <div class="info-box">
+    <p>2 sesiones/semana en Base y Construcción. Bajar a 1-2 en Específico y Pico. En Taper solo movilidad.</p>
+  </div>
+  <table class="strength-table">
+    <thead>
+      <tr><th>Ejercicio</th><th>Base</th><th>Construcción</th><th>Específ./Pico</th></tr>
+    </thead>
+    <tbody>
+      <tr><td class="ex-name">Sentadilla búlgara</td><td class="phase-val">4x10</td><td class="phase-val">4x8-10</td><td>3x8</td></tr>
+      <tr><td class="ex-name">Step-down excéntrico</td><td class="phase-val">3x10</td><td class="phase-val">4x10-12</td><td>3x8-10</td></tr>
+      <tr><td class="ex-name">Hip thrust</td><td class="phase-val">4x12</td><td class="phase-val">4x10</td><td>3x8</td></tr>
+      <tr><td class="ex-name">Peso muerto rumano</td><td class="phase-val">3x8-10</td><td class="phase-val">3x8</td><td>2-3x6</td></tr>
+      <tr><td class="ex-name">Nordic curl</td><td class="phase-val">3x6-8</td><td class="phase-val">3x6</td><td>2-3x5-6</td></tr>
+      <tr><td class="ex-name">Gemelo excéntrico</td><td class="phase-val">3x15</td><td class="phase-val">3x15 carg.</td><td>3x12-15</td></tr>
+      <tr><td class="ex-name">Drop jumps / Box jump</td><td class="phase-val">3x6</td><td class="phase-val">3x8</td><td>2x6</td></tr>
+      <tr><td class="ex-name">Core / Plancha / Pallof</td><td class="phase-val">3 bloq.</td><td class="phase-val">2-3 bloq.</td><td>1-2 bloq.</td></tr>
+    </tbody>
+  </table>
+
+  <div class="section-title">Claves para sub-6h</div>
+  <div style="display:flex;flex-direction:column;gap:8px;">
+    <div class="info-box"><p><b style="color:var(--text)">Nutrición:</b> 80-90 g/h de hidratos. El ritmo más alto aumenta el consumo.</p></div>
+    <div class="info-box"><p><b style="color:var(--text)">Calor:</b> 2-3 tiradas/mes al mediodía. Los últimos 14 km a ritmo sub-6 con calor son muy duros.</p></div>
+    <div class="info-box"><p><b style="color:var(--text)">Bajadas:</b> Con más km a mayor ritmo, el excéntrico es todavía más crítico.</p></div>
+    <div class="info-box"><p><b style="color:var(--text)">6º día:</b> Rodaje suave Z1-Z2 o técnica de bajada. No es un día duro.</p></div>
+    <div class="info-box"><p><b style="color:var(--text)">Tests:</b> Sem 8: test subida 45 min. Sem 18: tirada control 30 km.</p></div>
+  </div>
+</div>
+
+<!-- ══════════════ CHART ══════════════ -->
+<div id="view-chart" class="view">
+  <div class="chart-wrap">
+    <div class="chart-title">Progresión km/semana · 42 semanas</div>
+    <canvas id="kmChart" height="200"></canvas>
+    <div class="legend">
+      <div class="legend-item"><div class="legend-dot" style="background:var(--base)"></div>Base</div>
+      <div class="legend-item"><div class="legend-dot" style="background:var(--build)"></div>Construcción</div>
+      <div class="legend-item"><div class="legend-dot" style="background:var(--spec)"></div>Específico</div>
+      <div class="legend-item"><div class="legend-dot" style="background:var(--peak)"></div>Pico</div>
+      <div class="legend-item"><div class="legend-dot" style="background:var(--taper)"></div>Taper</div>
+    </div>
+  </div>
+  <div class="chart-wrap">
+    <div class="chart-title">Desnivel acumulado D+ por semana</div>
+    <canvas id="dChart" height="180"></canvas>
+  </div>
+</div>
+
+<script>
+// ── DATA ─────────────────────────────────────────────────────────────────────
+const WEEKS = [
+ {n:1,ph:'base',km:40,d:800,key:'Reentrada 6 días',days:{lun:{t:'streng',s:'Fuerza A · Base'},mar:{t:'series',s:"6x2' cuesta"},mie:{t:'short',s:'10 km Z2'},jue:{t:'streng',s:'Fuerza B'},vie:{t:'short',s:'10 km Z2'},sab:{t:'rest',s:'Descanso'},dom:{t:'long',s:'20 km montaña'}}},
+ {n:2,ph:'base',km:46,d:900,key:'Continuidad',days:{lun:{t:'streng',s:'Fuerza A'},mar:{t:'series',s:"7x2' cuesta"},mie:{t:'short',s:'11 km Z2'},jue:{t:'streng',s:'Fuerza B'},vie:{t:'short',s:'11 km Z2'},sab:{t:'rest',s:'Descanso'},dom:{t:'long',s:'24 km bastones'}}},
+ {n:3,ph:'base',km:48,d:1100,key:'1ª semana sólida',days:{lun:{t:'streng',s:'Fuerza A'},mar:{t:'series',s:"8x2' cuesta"},mie:{t:'short',s:'12 km +200D'},jue:{t:'streng',s:'Fuerza B'},vie:{t:'short',s:'12 km variado'},sab:{t:'rest',s:'Descanso'},dom:{t:'long',s:'24 km 1000D+'}}},
+ {n:4,ph:'base',km:34,d:600,key:'Descarga',days:{lun:{t:'rest',s:'Descanso'},mar:{t:'series',s:"4x2' suave"},mie:{t:'short',s:'9 km suave'},jue:{t:'streng',s:'Core suave'},vie:{t:'short',s:'9 km suave'},sab:{t:'rest',s:'Descanso'},dom:{t:'long',s:'16 km'}}},
+ {n:5,ph:'base',km:52,d:1200,key:'Subir carga',days:{lun:{t:'streng',s:'Fuerza A'},mar:{t:'series',s:"8x3' cuesta"},mie:{t:'short',s:'13 km med.'},jue:{t:'streng',s:'Fuerza B'},vie:{t:'short',s:'13 km med.'},sab:{t:'rest',s:'Descanso'},dom:{t:'long',s:'26 km'}}},
+ {n:6,ph:'base',km:53,d:1300,key:'Solidez',days:{lun:{t:'streng',s:'Fuerza A'},mar:{t:'series',s:"9x3' cuesta"},mie:{t:'short',s:'13 km variado'},jue:{t:'streng',s:'Fuerza B'},vie:{t:'short',s:'13 km +300D'},sab:{t:'rest',s:'Descanso'},dom:{t:'long',s:'27 km 1100D+'}}},
+ {n:7,ph:'base',km:57,d:1500,key:'Pico base',days:{lun:{t:'streng',s:'Fuerza A'},mar:{t:'series',s:"10x3' cuesta"},mie:{t:'short',s:'14 km ritmo'},jue:{t:'streng',s:'Fuerza B'},vie:{t:'short',s:'14 km bajadas'},sab:{t:'rest',s:'Descanso'},dom:{t:'long',s:'29 km'}}},
+ {n:8,ph:'base',km:40,d:800,key:'Descarga + test',days:{lun:{t:'rest',s:'Descanso'},mar:{t:'series',s:"5x2' suave"},mie:{t:'short',s:'10 km suave'},jue:{t:'streng',s:'Core'},vie:{t:'short',s:'10 km suave'},sab:{t:'rest',s:'Descanso'},dom:{t:'long',s:'20 km bastones'}}},
+ {n:9,ph:'build',km:54,d:1600,key:'Umbral subida',days:{lun:{t:'streng',s:'Fuerza A'},mar:{t:'series',s:"4x8' cuesta"},mie:{t:'short',s:'14 km ritmo'},jue:{t:'streng',s:'Fuerza B'},vie:{t:'short',s:'14 km técnico'},sab:{t:'rest',s:'Descanso'},dom:{t:'long',s:'26 km 1400D+'}}},
+ {n:10,ph:'build',km:56,d:1700,key:'Economía subida',days:{lun:{t:'streng',s:'Fuerza A'},mar:{t:'series',s:"4x8' bastones"},mie:{t:'short',s:'15 km bajadas'},jue:{t:'streng',s:'Fuerza B'},vie:{t:'short',s:'14 km ritmo'},sab:{t:'rest',s:'Descanso'},dom:{t:'long',s:'27 km'}}},
+ {n:11,ph:'build',km:57,d:1850,key:'Control bajando',days:{lun:{t:'streng',s:'Fuerza A'},mar:{t:'series',s:"5x8' cuesta"},mie:{t:'short',s:'15 km +400D'},jue:{t:'streng',s:'Fuerza B'},vie:{t:'short',s:'14 km bajadas'},sab:{t:'rest',s:'Descanso'},dom:{t:'long',s:'28 km 1500D+'}}},
+ {n:12,ph:'build',km:42,d:1000,key:'Descarga',days:{lun:{t:'rest',s:'Descanso'},mar:{t:'series',s:"4x3' suave"},mie:{t:'short',s:'11 km suave'},jue:{t:'streng',s:'Core suave'},vie:{t:'short',s:'11 km suave'},sab:{t:'rest',s:'Descanso'},dom:{t:'long',s:'20 km'}}},
+ {n:13,ph:'build',km:58,d:2000,key:'Especificidad',days:{lun:{t:'streng',s:'F. explosiva'},mar:{t:'series',s:"4x10' cuesta"},mie:{t:'short',s:'15 km técnico'},jue:{t:'streng',s:'Fuerza B'},vie:{t:'short',s:'15 km bajadas'},sab:{t:'rest',s:'Descanso'},dom:{t:'long',s:'28 km 1600D+'}}},
+ {n:14,ph:'build',km:61,d:2100,key:'Bajadas',days:{lun:{t:'streng',s:'Fuerza A'},mar:{t:'series',s:"5x10' cuesta"},mie:{t:'short',s:'16 km bajadas'},jue:{t:'streng',s:'Core tobillo'},vie:{t:'short',s:'15 km ritmo TGC'},sab:{t:'rest',s:'Descanso'},dom:{t:'long',s:'30 km'}}},
+ {n:15,ph:'build',km:63,d:2200,key:'Aclimatación calor',days:{lun:{t:'streng',s:'Fuerza A'},mar:{t:'series',s:"3x15' cuesta"},mie:{t:'short',s:'16 km calor'},jue:{t:'streng',s:'Fuerza B'},vie:{t:'short',s:'15 km calor'},sab:{t:'rest',s:'Descanso'},dom:{t:'long',s:'32 km'}}},
+ {n:16,ph:'build',km:46,d:1200,key:'Descarga',days:{lun:{t:'rest',s:'Descanso'},mar:{t:'series',s:"4x3' suave"},mie:{t:'short',s:'12 km suave'},jue:{t:'streng',s:'Movilidad'},vie:{t:'short',s:'12 km suave'},sab:{t:'rest',s:'Descanso'},dom:{t:'long',s:'22 km'}}},
+ {n:17,ph:'build',km:65,d:2300,key:'Resistencia espec.',days:{lun:{t:'streng',s:'Fuerza A'},mar:{t:'series',s:"3x15' cuesta"},mie:{t:'short',s:'16 km calor'},jue:{t:'streng',s:'Fuerza B'},vie:{t:'short',s:'16 km ritmo TGC'},sab:{t:'rest',s:'Descanso'},dom:{t:'long',s:'33 km 1700D+'}}},
+ {n:18,ph:'build',km:67,d:2400,key:'Cierre sólido',days:{lun:{t:'streng',s:'F. mantenimiento'},mar:{t:'series',s:"4x12' cuesta"},mie:{t:'short',s:'17 km ritmo TGC'},jue:{t:'streng',s:'Core tobillo'},vie:{t:'short',s:'16 km bajadas TGC'},sab:{t:'rest',s:'Descanso'},dom:{t:'long',s:'34 km eq. real'}}},
+ {n:19,ph:'spec',km:59,d:2200,key:'Inicio específico',days:{lun:{t:'streng',s:'Fuerza A'},mar:{t:'series',s:"4x10' subida"},mie:{t:'short',s:'16 km ritmo TGC'},jue:{t:'streng',s:'F. B corta'},vie:{t:'short',s:'15 km técnico'},sab:{t:'rest',s:'Descanso'},dom:{t:'long',s:'28 km perf. TGC'}}},
+ {n:20,ph:'spec',km:62,d:2300,key:'Técnica real',days:{lun:{t:'streng',s:'Fuerza A'},mar:{t:'series',s:"3x15' cuesta"},mie:{t:'short',s:'17 km bajadas'},jue:{t:'streng',s:'Movil.+core'},vie:{t:'short',s:'16 km ritmo TGC'},sab:{t:'rest',s:'Descanso'},dom:{t:'long',s:'29 km'}}},
+ {n:21,ph:'spec',km:63,d:2400,key:'Material/nutric.',days:{lun:{t:'streng',s:'Fuerza A'},mar:{t:'series',s:"3x15' cuesta"},mie:{t:'short',s:'17 km carrera'},jue:{t:'rest',s:'Descanso'},vie:{t:'short',s:'16 km bajadas'},sab:{t:'rest',s:'Descanso'},dom:{t:'long',s:'30 km eq. real'}}},
+ {n:22,ph:'spec',km:46,d:1400,key:'Descarga',days:{lun:{t:'rest',s:'Descanso'},mar:{t:'series',s:"4x3' activación"},mie:{t:'short',s:'12 km suave'},jue:{t:'streng',s:'Core'},vie:{t:'short',s:'12 km suave'},sab:{t:'rest',s:'Descanso'},dom:{t:'long',s:'22 km bastones'}}},
+ {n:23,ph:'spec',km:65,d:2500,key:'Subida+bajada',days:{lun:{t:'streng',s:'F. 1-2 ses.'},mar:{t:'series',s:"4x10' fuerte"},mie:{t:'short',s:'17 km técnico'},jue:{t:'streng',s:'Movilidad'},vie:{t:'short',s:'16 km bajadas'},sab:{t:'rest',s:'Descanso'},dom:{t:'long',s:'32 km 1900D+'}}},
+ {n:24,ph:'spec',km:67,d:2600,key:'Especificidad máx.',days:{lun:{t:'streng',s:'F. 1 sesión'},mar:{t:'series',s:"3x15' cuesta"},mie:{t:'short',s:'18 km ritmo TGC'},jue:{t:'streng',s:'Movilidad'},vie:{t:'short',s:'17 km bajadas'},sab:{t:'rest',s:'Descanso'},dom:{t:'long',s:'32 km eq. real'}}},
+ {n:25,ph:'spec',km:69,d:2700,key:'Semana cumbre',days:{lun:{t:'streng',s:'F. 1 sesión'},mar:{t:'series',s:"4x12' cuesta"},mie:{t:'short',s:'18 km bajadas ráp.'},jue:{t:'rest',s:'Descanso'},vie:{t:'short',s:'17 km ritmo total'},sab:{t:'rest',s:'Descanso'},dom:{t:'long',s:'34 km'}}},
+ {n:26,ph:'spec',km:49,d:1600,key:'Descarga',days:{lun:{t:'rest',s:'Descanso'},mar:{t:'series',s:"4x3' suave"},mie:{t:'short',s:'12 km suave'},jue:{t:'streng',s:'Movilidad'},vie:{t:'short',s:'13 km suave'},sab:{t:'rest',s:'Descanso'},dom:{t:'long',s:'24 km'}}},
+ {n:27,ph:'spec',km:67,d:2800,key:'Nutrición exacta',days:{lun:{t:'streng',s:'F. 1 sesión'},mar:{t:'series',s:"4x10' subida"},mie:{t:'short',s:'18 km ritmo TGC'},jue:{t:'streng',s:'Core'},vie:{t:'short',s:'17 km bajadas TGC'},sab:{t:'rest',s:'Descanso'},dom:{t:'long',s:'32 km simul. parc.'}}},
+ {n:28,ph:'spec',km:69,d:2900,key:'Resistencia musc.',days:{lun:{t:'streng',s:'F. 1 sesión'},mar:{t:'series',s:"3x15' cuesta"},mie:{t:'short',s:'18 km bajadas TGC'},jue:{t:'streng',s:'Movilidad'},vie:{t:'short',s:'17 km ritmo total'},sab:{t:'rest',s:'Descanso'},dom:{t:'long',s:'34 km eq. real'}}},
+ {n:29,ph:'spec',km:75,d:3000,key:'Simulacro ppal. 🔥',days:{lun:{t:'streng',s:'F. 1 sesión'},mar:{t:'series',s:"3x12' cuesta"},mie:{t:'short',s:'18 km ritmo total'},jue:{t:'rest',s:'Descanso'},vie:{t:'short',s:'17 km técnico'},sab:{t:'rest',s:'Descanso'},dom:{t:'long',s:'40-42 km SIMUL. 1'}}},
+ {n:30,ph:'spec',km:50,d:1700,key:'Descarga post-sim.',days:{lun:{t:'rest',s:'Descanso'},mar:{t:'series',s:"4x3' activación"},mie:{t:'short',s:'13 km suave'},jue:{t:'streng',s:'Movilidad'},vie:{t:'short',s:'13 km suave'},sab:{t:'rest',s:'Descanso'},dom:{t:'long',s:'24 km'}}},
+ {n:31,ph:'peak',km:63,d:2800,key:'Carga alta',days:{lun:{t:'streng',s:'F. 1 sesión'},mar:{t:'series',s:"4x10' cuesta"},mie:{t:'short',s:'17 km ritmo TGC'},jue:{t:'streng',s:'Core'},vie:{t:'short',s:'16 km técnico'},sab:{t:'rest',s:'Descanso'},dom:{t:'long',s:'30 km perf. TGC'}}},
+ {n:32,ph:'peak',km:75,d:3100,key:'Último gran simul. 🔥',days:{lun:{t:'streng',s:'F. 1 sesión'},mar:{t:'series',s:"3x15' cuesta"},mie:{t:'short',s:'18 km bajadas'},jue:{t:'streng',s:'Movilidad'},vie:{t:'short',s:'17 km ritmo TGC'},sab:{t:'rest',s:'Descanso'},dom:{t:'long',s:'40-42 km SIMUL. 2'}}},
+ {n:33,ph:'peak',km:59,d:2500,key:'Asimilar',days:{lun:{t:'rest',s:'Desc. activo'},mar:{t:'series',s:"6x4' cuesta"},mie:{t:'short',s:'16 km ritmo TGC'},jue:{t:'streng',s:'Core suave'},vie:{t:'short',s:'15 km técnico'},sab:{t:'rest',s:'Descanso'},dom:{t:'long',s:'28 km'}}},
+ {n:34,ph:'peak',km:48,d:1600,key:'Descarga relativa',days:{lun:{t:'rest',s:'Descanso'},mar:{t:'series',s:"6x3' cuesta"},mie:{t:'short',s:'13 km ritmo final'},jue:{t:'streng',s:'Movilidad'},vie:{t:'short',s:'13 km suave'},sab:{t:'rest',s:'Descanso'},dom:{t:'long',s:'22 km'}}},
+ {n:35,ph:'peak',km:71,d:3200,key:'Simulación reina',days:{lun:{t:'streng',s:'F. 1 sesión'},mar:{t:'series',s:"4x12' cuesta"},mie:{t:'short',s:'18 km téc.+ritmo'},jue:{t:'rest',s:'Descanso'},vie:{t:'short',s:'17 km bajadas'},sab:{t:'rest',s:'Descanso'},dom:{t:'long',s:'36 km fuerte'}}},
+ {n:36,ph:'peak',km:74,d:3500,key:'Techo del plan 🏔',days:{lun:{t:'streng',s:'F. 1 sesión'},mar:{t:'series',s:"3x15' cuesta"},mie:{t:'short',s:'18 km técnico'},jue:{t:'streng',s:'Movilidad'},vie:{t:'short',s:'18 km ritmo TGC'},sab:{t:'rest',s:'Descanso'},dom:{t:'long',s:'38-40 km PICO'}}},
+ {n:37,ph:'peak',km:55,d:2200,key:'Afinar',days:{lun:{t:'rest',s:'Desc. activo'},mar:{t:'series',s:"5x4' cuesta"},mie:{t:'short',s:'15 km controlados'},jue:{t:'streng',s:'Core'},vie:{t:'short',s:'14 km suave'},sab:{t:'rest',s:'Descanso'},dom:{t:'long',s:'26 km'}}},
+ {n:38,ph:'peak',km:44,d:1500,key:'Soltar piernas',days:{lun:{t:'rest',s:'Movilidad'},mar:{t:'series',s:"5x3' cuesta"},mie:{t:'short',s:'12 km suave'},jue:{t:'streng',s:'Core suave'},vie:{t:'short',s:'12 km suave'},sab:{t:'rest',s:'Descanso'},dom:{t:'long',s:'20 km bastones'}}},
+ {n:39,ph:'taper',km:43,d:1200,key:'Mantener chispa',days:{lun:{t:'streng',s:'Movil.+core'},mar:{t:'series',s:"5x2' cuesta"},mie:{t:'short',s:'11 km + 4 prog.'},jue:{t:'rest',s:'Descanso'},vie:{t:'short',s:'11 km suave'},sab:{t:'rest',s:'Descanso'},dom:{t:'long',s:'18 km'}}},
+ {n:40,ph:'taper',km:32,d:800,key:'Seguir fresco',days:{lun:{t:'rest',s:'Movilidad'},mar:{t:'series',s:"4x2' activación"},mie:{t:'short',s:'9 km suaves'},jue:{t:'rest',s:'Descanso'},vie:{t:'short',s:'9 km suave'},sab:{t:'rest',s:'Descanso'},dom:{t:'long',s:'14 km cómodos'}}},
+ {n:41,ph:'taper',km:24,d:400,key:'Puesta a punto',days:{lun:{t:'rest',s:'Descanso'},mar:{t:'series',s:"3x2' activación"},mie:{t:'short',s:'8 km suaves'},jue:{t:'rest',s:'Descanso'},vie:{t:'short',s:'8 km suave'},sab:{t:'rest',s:'Descanso'},dom:{t:'long',s:'8 km + 4 rectas'}}},
+ {n:42,ph:'taper',km:56,d:0,key:'🏁 SEMANA OBJETIVO',days:{lun:{t:'rest',s:'Descanso total'},mar:{t:'series',s:'7 km + 5x20"'},mie:{t:'rest',s:'Descanso'},jue:{t:'short',s:'5 km suaves'},vie:{t:'race',s:'CARRERA · 26 FEB'},sab:{t:'rest',s:'Recuperación'},dom:{t:'rest',s:'Paseo'}}}
+];
+
+const PHASE_INFO = {
+  base:  {name:'Fase 1 · Base',  color:'var(--base)',  weeks:'1–8',  km:'42–60',  note:'Rutina, fuerza general y aeróbico base. 6 días desde el inicio.'},
+  build: {name:'Fase 2 · Construcción', color:'var(--build)', weeks:'9–18', km:'56–70', note:'Desnivel, umbral, bajadas y aclimatación al calor de verano.'},
+  spec:  {name:'Fase 3 · Específico', color:'var(--spec)',  weeks:'19–30',km:'50–74', note:'Ritmo TGC, simulacros con material real y nutrición exacta.'},
+  peak:  {name:'Fase 4 · Pico',   color:'var(--peak)',  weeks:'31–38',km:'52–80', note:'Máxima especificidad. Pico sem 36: 80 km. Dos simulacros completos.'},
+  taper: {name:'Fase 5 · Taper',  color:'var(--taper)', weeks:'39–42',km:'18–46', note:'Reducir fatiga. Llegar fresco y afilado al 26 de febrero.'},
+};
+
+const DAYS_ES = {lun:'Lun',mar:'Mar',mie:'Mié',jue:'Jue',vie:'Vie',sab:'Sáb',dom:'Dom'};
+
+const START = new Date(2026,4,11); // May 11 2026
+function weekDates(n){
+  const a = new Date(START.getTime()+(n-1)*7*86400000);
+  const b = new Date(a.getTime()+6*86400000);
+  const ms=['ene','feb','mar','abr','may','jun','jul','ago','sep','oct','nov','dic'];
+  return `${a.getDate()} ${ms[a.getMonth()]}–${b.getDate()} ${ms[b.getMonth()]}`;
+}
+
+// Current week calculation
+const today = new Date();
+const diffMs = today - START;
+const currentWeek = Math.max(1, Math.min(42, Math.floor(diffMs/(7*86400000))+1));
+
+// ── PROGRESS ────────────────────────────────────────────────────────────────
+const pct = Math.round(((currentWeek-1)/42)*100);
+document.getElementById('progress-fill').style.width = pct+'%';
+document.getElementById('progress-text').textContent = `Semana ${currentWeek} de 42`;
+document.getElementById('progress-pct').textContent = pct+'%';
+
+// ── PHASE CARDS ─────────────────────────────────────────────────────────────
+const phContainer = document.getElementById('phase-cards');
+Object.entries(PHASE_INFO).forEach(([key,ph])=>{
+  const div = document.createElement('div');
+  div.className = 'phase-card';
+  div.innerHTML = `
+    <div class="phase-header" style="background:${ph.color}" onclick="togglePhaseBody(this)">
+      <div class="ph-left">
+        <span class="ph-name">${ph.name}</span>
+        <span class="ph-sub">Semanas ${ph.weeks} · ${ph.km} km/sem</span>
+      </div>
+      <span class="ph-badge">${ph.km} km</span>
+    </div>
+    <div class="phase-body">
+      <div class="phase-note">${ph.note}</div>
+    </div>`;
+  phContainer.appendChild(div);
+});
+
+function togglePhaseBody(el){
+  const body = el.nextElementSibling;
+  body.classList.toggle('open');
+}
+
+// ── WEEK LIST ────────────────────────────────────────────────────────────────
+const stored = JSON.parse(localStorage.getItem('tgc_checks')||'{}');
+function saveChecks(){ localStorage.setItem('tgc_checks', JSON.stringify(stored)); }
+
+function buildWeekList(filter='all'){
+  const container = document.getElementById('week-list');
+  container.innerHTML='';
+  WEEKS.filter(w=> filter==='all' || w.ph===filter).forEach(w=>{
+    const phInfo = PHASE_INFO[w.ph];
+    const card = document.createElement('div');
+    card.className='week-card'; card.id=`wcard-${w.n}`;
+    const tagCls = `tag-${w.ph}`;
+    card.innerHTML=`
+      <div class="week-header" onclick="toggleWeek(${w.n})">
+        <div class="week-num" style="border-left:3px solid ${phInfo.color}">
+          <span class="wn">${w.n}</span>
+          <span class="wl">sem</span>
+        </div>
+        <div class="week-info">
+          <div class="week-dates">${weekDates(w.n)} &nbsp;<span class="tag ${tagCls}">${phInfo.name.split('·')[0].trim()}</span></div>
+          <div class="week-title">${w.key}</div>
+        </div>
+        <div style="text-align:right">
+          <div class="week-km">${w.km} km</div>
+          <div class="week-dplus">+${w.d.toLocaleString('es')} D+</div>
+        </div>
+      </div>
+      <div class="week-body" id="wbody-${w.n}">
+        ${Object.entries(w.days).map(([d,s])=>{
+          const checkId=`chk-${w.n}-${d}`;
+          const done = stored[checkId];
+          return `<div class="session-row">
+            <span class="session-day">${DAYS_ES[d]}</span>
+            <div class="session-dot dot-${s.t}"></div>
+            <span class="session-text">${s.s}</span>
+            <div class="session-check${done?' done':''}" id="${checkId}" onclick="toggleCheck('${checkId}')"></div>
+          </div>`;
+        }).join('')}
+      </div>`;
+    container.appendChild(card);
+    // Auto-open current week
+    if(w.n===currentWeek){
+      setTimeout(()=>{ const b=document.getElementById(`wbody-${w.n}`); if(b) b.classList.add('open'); },100);
+    }
+  });
+}
+
+function toggleWeek(n){
+  document.getElementById(`wbody-${n}`).classList.toggle('open');
+}
+
+function toggleCheck(id){
+  stored[id] = !stored[id];
+  saveChecks();
+  const el = document.getElementById(id);
+  if(el) el.classList.toggle('done', stored[id]);
+}
+
+function filterPhase(ph, btn){
+  currentFilter=ph;
+  document.querySelectorAll('.pill').forEach(p=>p.classList.remove('active'));
+  btn.classList.add('active');
+  buildWeekList(ph);
+}
+
+buildWeekList();
+
+// ── CHARTS ──────────────────────────────────────────────────────────────────
+function drawChart(){
+  const km = WEEKS.map(w=>w.km);
+  const d  = WEEKS.map(w=>w.d);
+  const labels = WEEKS.map(w=>w.n);
+  const phColors = WEEKS.map(w=>({base:'#2e5e80',build:'#8a3e10',spec:'#7a5208',peak:'#1f4e1d',taper:'#2f6a2c'}[w.ph]));
+
+  // KM chart
+  const c1 = document.getElementById('kmChart');
+  const ctx1 = c1.getContext('2d');
+  c1.width = c1.offsetWidth * window.devicePixelRatio;
+  c1.height = 200 * window.devicePixelRatio;
+  ctx1.scale(window.devicePixelRatio, window.devicePixelRatio);
+  const W=c1.offsetWidth, H=200, pad={t:16,r:8,b:28,l:34};
+  const maxKm=Math.max(...km)+5;
+  ctx1.clearRect(0,0,W,H);
+  // grid
+  ctx1.strokeStyle='#2a2420'; ctx1.lineWidth=1;
+  [20,40,60,80].forEach(v=>{
+    const y=H-pad.b-(v/maxKm)*(H-pad.t-pad.b);
+    ctx1.beginPath(); ctx1.moveTo(pad.l,y); ctx1.lineTo(W-pad.r,y); ctx1.stroke();
+    ctx1.fillStyle='#7a6e65'; ctx1.font='9px -apple-system'; ctx1.fillText(v,2,y+3);
+  });
+  // bars
+  const bw=(W-pad.l-pad.r)/42*0.7;
+  WEEKS.forEach((w,i)=>{
+    const x=pad.l+(i/42)*(W-pad.l-pad.r)+(W-pad.l-pad.r)/42*0.15;
+    const barH=(w.km/maxKm)*(H-pad.t-pad.b);
+    ctx1.fillStyle=phColors[i];
+    ctx1.fillRect(x,H-pad.b-barH,bw,barH);
+  });
+  // current week marker
+  const cIdx=currentWeek-1;
+  const cx=pad.l+(cIdx/42)*(W-pad.l-pad.r)+(W-pad.l-pad.r)/42*0.5;
+  ctx1.strokeStyle='#e8711e'; ctx1.lineWidth=2; ctx1.setLineDash([3,3]);
+  ctx1.beginPath(); ctx1.moveTo(cx,pad.t); ctx1.lineTo(cx,H-pad.b); ctx1.stroke();
+  ctx1.setLineDash([]);
+  // x labels
+  ctx1.fillStyle='#7a6e65'; ctx1.font='9px -apple-system';
+  [1,10,20,30,40,42].forEach(n=>{
+    const x=pad.l+((n-1)/42)*(W-pad.l-pad.r);
+    ctx1.fillText(n,x,H-4);
+  });
+
+  // D+ chart
+  const c2 = document.getElementById('dChart');
+  const ctx2 = c2.getContext('2d');
+  c2.width = c2.offsetWidth * window.devicePixelRatio;
+  c2.height = 180 * window.devicePixelRatio;
+  ctx2.scale(window.devicePixelRatio, window.devicePixelRatio);
+  const W2=c2.offsetWidth, H2=180, p2={t:16,r:8,b:28,l:38};
+  const maxD=Math.max(...d)+200;
+  ctx2.clearRect(0,0,W2,H2);
+  // gradient line
+  const grd=ctx2.createLinearGradient(0,p2.t,0,H2-p2.b);
+  grd.addColorStop(0,'rgba(205,152,33,0.8)');
+  grd.addColorStop(1,'rgba(205,152,33,0.05)');
+  const pts=WEEKS.map((w,i)=>({
+    x:p2.l+(i/41)*(W2-p2.l-p2.r),
+    y:H2-p2.b-(w.d/maxD)*(H2-p2.t-p2.b)
+  }));
+  ctx2.beginPath(); ctx2.moveTo(pts[0].x,H2-p2.b);
+  pts.forEach(p=>ctx2.lineTo(p.x,p.y));
+  ctx2.lineTo(pts[pts.length-1].x,H2-p2.b); ctx2.closePath();
+  ctx2.fillStyle=grd; ctx2.fill();
+  ctx2.beginPath(); pts.forEach((p,i)=>i===0?ctx2.moveTo(p.x,p.y):ctx2.lineTo(p.x,p.y));
+  ctx2.strokeStyle='#c98a14'; ctx2.lineWidth=2; ctx2.stroke();
+  // grid
+  ctx2.strokeStyle='#2a2420'; ctx2.lineWidth=1;
+  [1000,2000,3000].forEach(v=>{
+    const y=H2-p2.b-(v/maxD)*(H2-p2.t-p2.b);
+    ctx2.beginPath(); ctx2.moveTo(p2.l,y); ctx2.lineTo(W2-p2.r,y); ctx2.stroke();
+    ctx2.fillStyle='#7a6e65'; ctx2.font='9px -apple-system'; ctx2.fillText(v===1000?'1k':v===2000?'2k':'3k',2,y+3);
+  });
+  ctx2.fillStyle='#7a6e65'; ctx2.font='9px -apple-system';
+  [1,10,20,30,40,42].forEach(n=>{
+    const x=p2.l+((n-1)/41)*(W2-p2.l-p2.r);
+    ctx2.fillText(n,x,H2-4);
+  });
+}
+
+// ── NAV ──────────────────────────────────────────────────────────────────────
+let currentFilter='all';
+function showView(name,btn){
+  document.querySelectorAll('.view').forEach(v=>v.classList.remove('active'));
+  document.querySelectorAll('.nav-tab').forEach(t=>t.classList.remove('active'));
+  document.getElementById('view-'+name).classList.add('active');
+  if(btn) btn.classList.add('active');
+  if(name==='chart') setTimeout(drawChart,50);
+  if(name==='plan') buildWeekList(currentFilter);
+}
+</script>
+
+<!-- ══════════════ FUERZA A/B ══════════════ -->
+<div id="view-fuerzaab" class="view">
+  <div class="fab-section">
+    <div class="fab-header" style="background:linear-gradient(135deg,#2a5a28,#3a8a36)">
+      <div><div class="fab-title">FUERZA A · Potencia y propulsión</div><div class="fab-sub">Lunes · Glúteo, cuádriceps y cadena posterior</div></div>
+      <span class="fab-badge">Lunes</span>
+    </div>
+    <table class="fab-table">
+      <thead><tr><th>Ejercicio</th><th>Series × Reps</th><th>Descanso</th><th>Clave</th></tr></thead>
+      <tbody>
+        <tr><td class="ex">Sentadilla búlgara</td><td class="series">3-4 × 8-10</td><td>90"</td><td class="tip">Pie trasero elevado. Tronco neutro. Baja controlado.</td></tr>
+        <tr><td class="ex">Hip thrust</td><td class="series">3-4 × 10-12</td><td>90"</td><td class="tip">Glúteo máximo. Empuja el suelo con los talones.</td></tr>
+        <tr><td class="ex">Peso muerto rumano</td><td class="series">3 × 8-10</td><td>90"</td><td class="tip">Bisagra de cadera. Espalda recta. Siente los isquios.</td></tr>
+        <tr><td class="ex">Step-down excéntrico</td><td class="series">3 × 10 (4" bajando)</td><td>60"</td><td class="tip">Desde un escalón. Baja MUY lento. Clave para bajadas TGC.</td></tr>
+        <tr><td class="ex">Gemelo excéntrico</td><td class="series">3 × 15</td><td>45"</td><td class="tip">Sube con dos piernas, baja con una. En escalón.</td></tr>
+        <tr><td class="ex">Plancha / Pallof press</td><td class="series">2-3 × 30-40"</td><td>45"</td><td class="tip">Core antirotación. Esencial en terreno irregular.</td></tr>
+        <tr><td class="ex">Drop jumps <span style="color:var(--faint);font-size:10px">(sem 9+)</span></td><td class="series">3 × 6</td><td>60"</td><td class="tip">Desde caja baja. Amortiza rápido. Añadir en construcción.</td></tr>
+      </tbody>
+    </table>
+  </div>
+  <div class="fab-section">
+    <div class="fab-header" style="background:linear-gradient(135deg,#1a3a60,#2a6aaa)">
+      <div><div class="fab-title">FUERZA B · Estabilidad y prevención</div><div class="fab-sub">Jueves · Tobillo, isquios y control neuromuscular</div></div>
+      <span class="fab-badge">Jueves</span>
+    </div>
+    <table class="fab-table">
+      <thead><tr><th>Ejercicio</th><th>Series × Reps</th><th>Descanso</th><th>Clave</th></tr></thead>
+      <tbody>
+        <tr><td class="ex">Nordic curl</td><td class="series">3 × 5-8</td><td>90"</td><td class="tip">El más difícil. Empieza asistido con banda si no puedes.</td></tr>
+        <tr><td class="ex">Step-up unilateral</td><td class="series">3 × 10</td><td>60"</td><td class="tip">Con mancuerna. Simula el gesto de subida en montaña.</td></tr>
+        <tr><td class="ex">Puente glúteo unilateral</td><td class="series">3 × 12</td><td>45"</td><td class="tip">Una pierna en el aire. Activa glúteo medio y estabilidad.</td></tr>
+        <tr><td class="ex">Gemelo excéntrico con carga</td><td class="series">3 × 12-15</td><td>45"</td><td class="tip">Añade chaleco desde sem 9. Tobillo resistente.</td></tr>
+        <tr><td class="ex">Dead bug</td><td class="series">3 × 10</td><td>45"</td><td class="tip">Espalda pegada al suelo. Brazos y piernas opuestos. Lento.</td></tr>
+        <tr><td class="ex">Pallof press lateral</td><td class="series">2-3 × 12</td><td>45"</td><td class="tip">Con banda o polea. Resiste la rotación. Cada lado.</td></tr>
+        <tr><td class="ex">Propiocepción tobillo</td><td class="series">2 × 45"</td><td>30"</td><td class="tip">Equilibrio monopodal con ojos cerrados. Esguinces 0.</td></tr>
+      </tbody>
+    </table>
+  </div>
+  <div class="section-title">Progresión por fases</div>
+  <div class="prog-phase">
+    <div class="prog-phase-title">🟦 Base · Semanas 1–8</div>
+    <div class="prog-row"><div class="prog-dot" style="background:var(--blue)"></div><div class="prog-text"><b>Fuerza A lunes + Fuerza B jueves.</b> Pesos moderados. Aprende el movimiento.</div></div>
+    <div class="prog-row"><div class="prog-dot" style="background:var(--blue)"></div><div class="prog-text">Búlgara: empieza con peso corporal → +2-4 kg/semana si el movimiento es limpio.</div></div>
+    <div class="prog-row"><div class="prog-dot" style="background:var(--blue)"></div><div class="prog-text">Nordic curl: usa banda de resistencia para asistirte si no puedes solos.</div></div>
+    <div class="prog-row"><div class="prog-dot" style="background:var(--blue)"></div><div class="prog-text">Sem 4 y 8 (descarga): reduce carga 30%, mantén técnica perfecta.</div></div>
+  </div>
+  <div class="prog-phase">
+    <div class="prog-phase-title">🟧 Construcción · Semanas 9–18</div>
+    <div class="prog-row"><div class="prog-dot" style="background:var(--build)"></div><div class="prog-text"><b>Sube series a 4.</b> Añade drop jumps al final de Fuerza A (3×6).</div></div>
+    <div class="prog-row"><div class="prog-dot" style="background:var(--build)"></div><div class="prog-text">Hip thrust: apunta a 1× tu peso corporal. Gemelo: añade chaleco o mochila.</div></div>
+    <div class="prog-row"><div class="prog-dot" style="background:var(--build)"></div><div class="prog-text">Nordic: intenta 1-2 sin banda. Cuando domines 3×6 libres, deja la banda.</div></div>
+  </div>
+  <div class="prog-phase">
+    <div class="prog-phase-title">🟨 Específico · Semanas 19–30</div>
+    <div class="prog-row"><div class="prog-dot" style="background:var(--spec)"></div><div class="prog-text"><b>Reduce a 1-2 sesiones/semana</b> según fatiga del trail. Mantén cargas, no progreses.</div></div>
+    <div class="prog-row"><div class="prog-dot" style="background:var(--spec)"></div><div class="prog-text">Semanas de simulacro: solo Fuerza B suave (30 min) esa semana.</div></div>
+  </div>
+  <div class="prog-phase">
+    <div class="prog-phase-title">🟩 Pico · Semanas 31–38</div>
+    <div class="prog-row"><div class="prog-dot" style="background:var(--peak)"></div><div class="prog-text"><b>1 sesión/semana máximo.</b> Preferiblemente Fuerza B: gemelo, step-down y core.</div></div>
+    <div class="prog-row"><div class="prog-dot" style="background:var(--peak)"></div><div class="prog-text">Sin nórdicos ni peso muerto pesado. Las piernas ya trabajan suficiente.</div></div>
+  </div>
+  <div class="prog-phase">
+    <div class="prog-phase-title">🏁 Taper · Semanas 39–42</div>
+    <div class="prog-row"><div class="prog-dot" style="background:var(--taper)"></div><div class="prog-text"><b>Solo movilidad y activación.</b> Nada de agujetas antes de la carrera.</div></div>
+    <div class="prog-row"><div class="prog-dot" style="background:var(--taper)"></div><div class="prog-text">Sem 42: cero fuerza. Paseos suaves y estiramientos.</div></div>
+  </div>
+</div>
+
+</body>
+</html>
